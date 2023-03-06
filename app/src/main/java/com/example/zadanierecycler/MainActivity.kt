@@ -4,8 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.zadanierecycler.databinding.ActivityMainBinding
-import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,14 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.recycler.layoutManager = GridLayoutManager(binding.recycler.context, 3, RecyclerView.VERTICAL, false)
 
-        
+
         binding.btn1.setOnClickListener{
-            val elem = ArrayList<String>()
             val chosenImg = Constants.images.random()
-            elem.add("$chosenImg.png")
-            elem.add(chosenImg)
-            Globals.imageList.add(elem)
+            Globals.imageList.add(chosenImg)
             updateRecycler()
         }
 
