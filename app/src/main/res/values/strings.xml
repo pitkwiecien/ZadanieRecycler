@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZadanieRecycler</string>
+    <string name="liczba_kolumn">Liczba kolumn: </string>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/Buttons">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="1"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn2"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="2"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn3"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="3"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn4"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="4"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn5"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="5"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn6"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="10"
+            android:text="6"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ColumnNumber"
+        android:text="@string/liczba_kolumn"
+        app:layout_constraintTop_toBottomOf="@+id/Buttons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ColumnInput"
+        app:layout_constraintLeft_toRightOf="@+id/ColumnNumber"
+        app:layout_constraintTop_toBottomOf="@+id/Buttons"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned"
+        android:textSize="14sp"
+        tools:ignore="LabelFor" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ColumnInput" />
+</androidx.constraintlayout.widget.ConstraintLayout>
