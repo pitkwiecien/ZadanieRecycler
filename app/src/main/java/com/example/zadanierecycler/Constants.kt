@@ -9,5 +9,7 @@ class Constants {
             "mocarz",
             "scigacz"
         )
+        const val maxTableCols = 5
+        const val minTableCols = 1
     }
 }

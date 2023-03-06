@@ -3,7 +3,6 @@ package com.example.zadanierecycler
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,17 +44,16 @@ class Adapter(private val dataSet: ArrayList<String>, private val mainActivity: 
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        Log.d("dbg", dataSet[position])
         dataSet[position].also {
-            viewHolder.textView.text = it
             viewHolder.imageView.setImageDrawable(getDrawableByName(mainActivity, it))
+            viewHolder.textView.text = mainActivity.getString(R.string.inner_text, it, Globals.occurrencesList[position])
         }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
 
-    fun getDrawableByName(context: Context, name: String): Drawable? {
+    private fun getDrawableByName(context: Context, name: String): Drawable? {
         val resourceId = context.resources.getIdentifier(
             name, "drawable", context.packageName
         )
